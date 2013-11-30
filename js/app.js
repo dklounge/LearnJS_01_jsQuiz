@@ -1,8 +1,19 @@
 $(document).ready(function () {
 
-  $('button').click(function () {
-    $('.questions').append("<p>hello</p>").show();
-  });
+  $('button').on('click', nextQuestion);
+
+  var i = 0;
+
+  function nextQuestion () {
+
+    $('.questions').append("<p>" + allQuestions[i]['question'] + "</p>").show();
+    i++;
+  }
+
+  // $('button').on({
+  //   'click': function () { $('.questions').append("<p>" + allQuestions[0]['question'] + "</p>").show(); },
+  //   'mouseover': function () { console.log('hovered'); }
+  // });
 
 });
 
